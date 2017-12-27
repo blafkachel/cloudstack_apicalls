@@ -1,0 +1,8 @@
+# ====== Cloudstack connection details ====== #
+baseurl         = '' #API endpoint
+APIKEY          = ''
+SECRETKEY       = ''
+
+DRYRUN          = False
+STDOUT          = True
+DOLOG           = False
