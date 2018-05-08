@@ -201,7 +201,7 @@ class CS():
       print '  VOLUMES'
       for x in data:
           id = x['id']
-          print '   ',x['name'], x['id']
+          print '   ',x['name'], x['id'], x['size']/1024/1024/1024
           if 'listvolumes' in type.lower(): self.getcloudstack_listSnapshotPolicies(id)
           if 'listvolumes' in type.lower(): self.getcloudstack_snapshots(id)
 
@@ -418,7 +418,7 @@ def main():
     if action == 'overview':
         # Read current registrations
         cs.getcloudstack_virtualmachines()
-    if 'list' and not 'overview' and not 'Snapshot' in action:
+    if 'list' in action and not 'overview' in action and not 'Snapshot' in action:
         cs.getcloudstack_list(action,noid)
     if 'listSnapshotPolicies' in action:
         cs.getcloudstack_listSnapshotPolicies('9edec2be-8197-4207-bd36-0243a52b8d1a')
